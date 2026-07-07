@@ -194,6 +194,37 @@
         }
       }
     },
+    "/Users/register": {
+      "post": {
+        "tags": [
+          "Users"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RegisterRequestDTO"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RegisterRequestDTO"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/RegisterRequestDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/Users/auth": {
       "post": {
         "tags": [
@@ -203,17 +234,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/AuthenticationRequest"
+                "$ref": "#/components/schemas/AuthenticationRequestDTO"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/AuthenticationRequest"
+                "$ref": "#/components/schemas/AuthenticationRequestDTO"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/AuthenticationRequest"
+                "$ref": "#/components/schemas/AuthenticationRequestDTO"
               }
             }
           }
@@ -245,7 +276,7 @@
   },
   "components": {
     "schemas": {
-      "AuthenticationRequest": {
+      "AuthenticationRequestDTO": {
         "type": "object",
         "properties": {
           "username": {
@@ -260,11 +291,6 @@
         "additionalProperties": false
       },
       "Product": {
-        "required": [
-          "id",
-          "name",
-          "sku"
-        ],
         "type": "object",
         "properties": {
           "id": {
@@ -281,18 +307,25 @@
           }
         },
         "additionalProperties": false
+      },
+      "RegisterRequestDTO": {
+        "type": "object",
+        "properties": {
+          "username": {
+            "type": "string",
+            "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "password": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
       }
     }
-  },
-  "tags": [
-    {
-      "name": "Config"
-    },
-    {
-      "name": "Products"
-    },
-    {
-      "name": "Users"
-    }
-  ]
+  }
 }

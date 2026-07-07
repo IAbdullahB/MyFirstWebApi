@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using MyFirstWebAPI.Data;
+using MyFirstWebAPI.Models;
 
 namespace MyFirstWebAPI.Controllers
 {
@@ -10,9 +10,9 @@ namespace MyFirstWebAPI.Controllers
 
     public class ProductsController : ControllerBase
     {
-        private readonly ApplicationDbContext _dbContext;
+        private readonly ProductsContext _dbContext;
 
-        public ProductsController(ApplicationDbContext dbContext)
+        public ProductsController(ProductsContext dbContext)
         {
             _dbContext = dbContext;
         }

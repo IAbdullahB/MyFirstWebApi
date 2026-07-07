@@ -19,7 +19,7 @@
     "Parameters": [
       {
         "Name": "product",
-        "Type": "MyFirstWebAPI.Data.Product",
+        "Type": "MyFirstWebAPI.Models.Product",
         "IsRequired": true
       }
     ],
@@ -45,7 +45,7 @@
     "Parameters": [
       {
         "Name": "product",
-        "Type": "MyFirstWebAPI.Data.Product",
+        "Type": "MyFirstWebAPI.Models.Product",
         "IsRequired": true
       }
     ],
@@ -61,7 +61,7 @@
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[MyFirstWebAPI.Data.Product, MyFirstWebAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[MyFirstWebAPI.Models.Product, MyFirstWebAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -87,7 +87,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "MyFirstWebAPI.Data.Product",
+        "Type": "MyFirstWebAPI.Models.Product",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -123,7 +123,7 @@
     "Parameters": [
       {
         "Name": "request",
-        "Type": "MyFirstWebAPI.Controllers.AuthenticationRequest",
+        "Type": "MyFirstWebAPI.dtos.AuthenticationRequestDTO",
         "IsRequired": true
       }
     ],
@@ -138,5 +138,21 @@
         "StatusCode": 200
       }
     ]
+  },
+  {
+    "ContainingType": "MyFirstWebAPI.Controllers.UsersController",
+    "Method": "CreateUser",
+    "RelativePath": "Users/register",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "MyFirstWebAPI.dtos.RegisterRequestDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
   }
 ]
