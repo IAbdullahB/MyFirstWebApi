@@ -82,3 +82,4 @@ C:\My workspace\MyFirstWebAPI\MyFirstWebAPI\bin\Debug\net9.0\runtimes\win\lib\ne
 C:\My workspace\MyFirstWebAPI\MyFirstWebAPI\bin\Debug\net9.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
 C:\My workspace\MyFirstWebAPI\MyFirstWebAPI\bin\Debug\net9.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
 C:\My workspace\MyFirstWebAPI\MyFirstWebAPI\bin\Debug\net9.0\config.json
+C:\My workspace\MyFirstWebAPI\MyFirstWebAPI\obj\Debug\net9.0\MyFirstWebAPI.sourcelink.json

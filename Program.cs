@@ -1,6 +1,9 @@
-using MyFirstWebAPI;
-using MyFirstWebAPI.Data;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
+using MyFirstWebAPI;
+using MyFirstWebAPI.Authentication;
+using MyFirstWebAPI.Data;
 using MyFirstWebAPI.Middlewares;
 using MyFirstWebAPI.Middlewares.Filters;
 
@@ -21,6 +24,9 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddDbContext<ApplicationDbContext>(cfg => cfg.UseSqlServer(builder.Configuration["ConnectionStrings:DefaultConnection"]));
+
+builder.Services.AddAuthentication()
+    .AddScheme<AuthenticationSchemeOptions, BasicAuthenticationHandler>("Basic", null);
 
 var app = builder.Build();
 

@@ -1,10 +1,13 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using MyFirstWebAPI.Data;
 
 namespace MyFirstWebAPI.Controllers
 {
     [ApiController]
     [Route("[controller]")]
+    [Authorize]
+
     public class ProductsController : ControllerBase
     {
         private readonly ApplicationDbContext _dbContext;
@@ -54,6 +57,7 @@ namespace MyFirstWebAPI.Controllers
 
         [HttpGet]
         [Route("{id}")]
+        [AllowAnonymous]
         public ActionResult<Product> GetProductById(int id)
         {
             var product = _dbContext.Set<Product>().Find(id);
