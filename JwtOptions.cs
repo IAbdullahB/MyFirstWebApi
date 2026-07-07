@@ -1,0 +1,12 @@
+﻿namespace MyFirstWebAPI
+{
+    public class JwtOptions
+    {
+            public string Issuer { get; set; }
+            public string Audience { get; set; }
+            public int lifeTimeInMinutes { get; set; }
+            public string SigningKey { get; set; }
+        
+
+    }
+}
