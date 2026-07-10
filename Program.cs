@@ -6,6 +6,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using MyFirstWebAPI;
 using MyFirstWebAPI.Authentication;
+using MyFirstWebAPI.Filters;
 using MyFirstWebAPI.Middlewares;
 using MyFirstWebAPI.Middlewares.Filters;
 using MyFirstWebAPI.Models;

@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using MyFirstWebAPI.Filters;
 using MyFirstWebAPI.Models;
 
 namespace MyFirstWebAPI.Controllers
@@ -45,6 +46,7 @@ namespace MyFirstWebAPI.Controllers
 
         [HttpGet]
         [Route("")]
+        [AllowAnonymous]
         public ActionResult<IEnumerable<Product>> GetAllProducts()
         {
             var products = _dbContext.Set<Product>().ToList();
@@ -57,7 +59,7 @@ namespace MyFirstWebAPI.Controllers
 
         [HttpGet]
         [Route("{id}")]
-        [AllowAnonymous]
+        [CheckPermission(Permission.ReadProduct)]
         public ActionResult<Product> GetProductById(int id)
         {
             var product = _dbContext.Set<Product>().Find(id);
